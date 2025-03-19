@@ -1,41 +1,41 @@
+import random
 
-cpf = input('Escreva o CPF: ')
-nove_digitos = cpf.replace('.', '').replace('-', '')
-nove_digitos = nove_digitos[:-2]
+cpf = ''
+for i in range(9):
+    cpf += str(random.randint(0, 9))
 
-contador = 11
+print(f'CPF Base: {cpf}')
+#verifica o primeiro digito
+nove_digitos = cpf
+contador = 10
 soma = 0
 for digito in nove_digitos:
-   contador -= 1
-   soma += int(digito) * contador
+    soma += int(digito) * contador
+    contador -= 1
 
-resultado = soma % 11
+resultado = (soma * 10) % 11
+resultado = 0 if resultado >= 10 else resultado
 
-if resultado <  2:
-    resultado = 0
-elif resultado >= 2:
-    resultado = 11 - resultado
+print(f'O primeiro dígito do CPF é {resultado}')
 
-print(f'O primeiro digito do CPF é {resultado}')
-
-dez_digitos = cpf.replace('.', '').replace('-', '')
-dez_digitos = dez_digitos[:-1]
-
-contador2 = 12
+#verifica o segundo dígito
+dez_digitos = cpf + str(resultado)
+contador2 = 11
 soma2 = 0
 for digito2 in dez_digitos:
-    contador2 -= 1
     soma2 += int(digito2) * contador2
+    contador2 -= 1
 
-resultado2 = soma2 % 11
+resultado2 = (soma2 * 10) % 11
+resultado2 = 0 if resultado2 >= 10 else resultado2
 
-if resultado2 <  2:
-    resultado2 = 0
-elif resultado2 >= 2:
-    resultado2 = 11 - resultado2
+print(f'O segundo dígito do CPF é {resultado2}')
 
-print(f'O segundo digito do CPF é {resultado2}')
+#cpf final
+cpf_final = f'{cpf}{resultado}{resultado2}'
+cpf_formatado = f'{cpf_final[:3]}.{cpf_final[3:6]}.{cpf_final[6:9]}-{cpf_final[9:]}'
 
+print(f'CPF Final: {cpf_formatado}')
 
 
 
