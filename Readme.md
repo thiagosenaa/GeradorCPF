@@ -5,8 +5,8 @@ Ex.: 746.824.890-70 (746824890)
 
 
    10 9  8  7  6  5  4  3  2 
-*  7  4  6  8  2  4  8  9  0
- = 70 36 48 56 12 20 32 27 0
+   7  4  6  8  2  4  8  9  0
+= 70 36 48 56 12 20 32 27 0
 
 Somar o resultado das multiplicações e multiplicar novamente por 10.
 301 * 10 = 3010
