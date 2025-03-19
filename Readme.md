@@ -2,6 +2,8 @@ Esse projeto foi feito para gerar CPF válidos utilizando o algoritmos do CPF cr
 
 Para primeiro digito: é necessário pegar cada número do CPF antes do traço e multiplicar cada um dos valores por uma contagem regressiva começando de 10. 
 Ex.: 746.824.890-70 (746824890)
+
+
    10 9  8  7  6  5  4  3  2 
 *  7  4  6  8  2  4  8  9  0
  = 70 36 48 56 12 20 32 27 0
